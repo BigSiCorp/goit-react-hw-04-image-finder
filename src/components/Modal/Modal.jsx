@@ -1,14 +1,15 @@
+// eslint-disable-next-line
 import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import s from './Modal.module.css';
 
 export const Modal = ({ closeModal, image }) => {
  
-  const closeByEscape = e => {
-    if (e.code === 'Escape') {
-      closeModal();
-    }
-  };
+  // const closeByEscape = e => {
+  //   if (e.code === 'Escape') {
+  //     closeModal();
+  //   }
+  // };
 
   const closeByBackdrop = event => {
     if (event.currentTarget === event.target) {
@@ -17,11 +18,16 @@ export const Modal = ({ closeModal, image }) => {
   };
 
   useEffect(() => {
+    const closeByEscape = e => {
+    if (e.code === 'Escape') {
+      closeModal();
+    }
+  };
     window.addEventListener('keydown', closeByEscape);
     return () => {
       window.removeEventListener('keydown', closeByEscape);
     };
-  }, []);
+  }, [closeModal]);
 
     const {
       image: { src, alt },

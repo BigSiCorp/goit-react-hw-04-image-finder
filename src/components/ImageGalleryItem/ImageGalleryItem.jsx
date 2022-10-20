@@ -22,7 +22,7 @@ export const GalleryItem = ({ gallery, openModal }) => {
   );
 };
 
-GalleryItem.propTypes={
-  gallery: PropTypes.array.isRequired,
-  openModal: PropTypes.func.isRequired,
-}
+// GalleryItem.propTypes={
+//   gallery: PropTypes.array.isRequired,
+//   openModal: PropTypes.func.isRequired,
+// }
